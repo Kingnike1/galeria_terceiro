@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>W3.CSS Template</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <style>
+    body,h1 {font-family: "Montserrat", sans-serif}
+    img {margin-bottom: -7px}
+    .w3-row-padding img {margin-bottom: 12px}
+  
+  </style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-black w3-animate-top w3-xxlarge" style="display:none;padding-top:150px" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-black w3-xxlarge w3-padding w3-display-topright" style="padding:6px 24px">
+    <i class="fa fa-remove"></i>
+  </a>
+  <div class="w3-bar-block w3-center">
+    <a href="#Header" class="w3-bar-item w3-button w3-text-grey w3-hover-black">About</a>
+    <a href="#photo" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Photos</a>
+    <a href="#contato" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Contact</a>
+  </div>
+</nav>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+<!-- Header -->
+<div class="w3-opacity">
+  <span class="w3-button w3-xxlarge w3-white w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+  <div class="w3-clear"></div>
+  <header class="w3-center w3-margin-bottom">
+    <h1 id="Header"><b>Galeria de Foto</b></h1>
+    <p><b>Esses foram os melhores momentos do Terceiro de Informática</b></p>
+    <p class="w3-padding-16"><button class="w3-button w3-black" onclick="myFunction()">Alternar Espaçamento da Grade</button></p>
+  </header>
+</div>
+
+
+  <!-- Photo Grid -->
+  <div class="w3-row" id="myGrid" style="margin-bottom:128px" id="photo">
+    <div class="w3-third">
+      <div class="w3-photo-container">
+        <img src="img1.jpg" alt="Imagem 1" style="width:100%">
+        <img src="img2.jpg" alt="Imagem 2" style="width:100%">
+        <img src="img3.jpg" alt="Imagem 3" style="width:100%">
+        <img src="img4.jpg" alt="Imagem 4" style="width:100%">
+        <img src="img5.jpg" alt="Imagem 5" style="width:100%">
+        <img src="img6.jpg" alt="Imagem 6" style="width:100%">
+        <img src="img7.jpg" alt="Imagem 7" style="width:100%">
+        <img src="img22.jpg" alt="Imagem 22" style="width:100%">
+      </div>
+    </div>
+
+    <div class="w3-third">
+      <div class="w3-photo-container">
+        <img src="img8.jpg" alt="Imagem 8" style="width:100%">
+        <img src="img9.jpg" alt="Imagem 9" style="width:100%">
+        <img src="img10.jpg" alt="Imagem 10" style="width:100%">
+        <img src="img11.jpg" alt="Imagem 11" style="width:100%">
+        <img src="img12.jpg" alt="Imagem 12" style="width:100%">
+        <img src="img13.jpg" alt="Imagem 13" style="width:100%">
+        <img src="img14.jpg" alt="Imagem 14" style="width:100%">
+        <img src="img23.jpg" alt="Imagem 23" style="width:100%">
+      </div>
+    </div>
+
+    <div class="w3-third">
+      <div class="w3-photo-container">
+        <img src="img15.jpg" alt="Imagem 15" style="width:100%">
+        <img src="img16.jpg" alt="Imagem 16" style="width:100%">
+        <img src="img17.jpg" alt="Imagem 17" style="width:100%">
+        <img src="img18.jpg" alt="Imagem 18" style="width:100%">
+        <img src="img19.jpg" alt="Imagem 19" style="width:100%">
+        <img src="img20.jpg" alt="Imagem 20" style="width:100%">
+        <img src="img21.jpg" alt="Imagem 21" style="width:100%">
+        <img src="img24.jpg" alt="Imagem 24" style="width:100%">
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin-top:128px">
+  <a href="http://instagram.com/ti.2k25" target="_blank" rel="noopener noreferrer">
+    <i class="fa-brands fa-instagram w3-hover-opacity"></i>
+  </a>
+  <a href="https://www.tiktok.com/@ti.2k25" target="_blank" rel="noopener noreferrer">
+    <i class="fa-brands fa-tiktok w3-hover-opacity"></i>
+  </a>
+  <p class="w3-medium">&copy; Copyright by
+    <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">Kingnike1</a>.
+  </p>
+</footer>
+
+<script>
+// Função para embaralhar as imagens
+function shuffleImages() {
+  const photoContainers = document.querySelectorAll('.w3-photo-container');
+  photoContainers.forEach(container => {
+    const images = Array.from(container.querySelectorAll('img'));
+    for (let i = images.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      container.appendChild(images[j]);
+    }
+  });
+}
+
+// Chama a função de embaralhamento a cada 2 segundos (2000ms)
+setInterval(shuffleImages, 120000);
+
+// Toggle grid padding
+function myFunction() {
+  var x = document.getElementById("myGrid");
+  if (x.className === "w3-row") {
+    x.className = "w3-row-padding";
+  } else {
+    x.className = x.className.replace("w3-row-padding", "w3-row");
+  }
+}
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.width = "100%";
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+</body>
+</html>
